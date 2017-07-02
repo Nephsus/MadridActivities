@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">MadridActivities</string>
+    <string name="config_file">configFile</string>
+    <string name="last_update">lastUpdate</string>
+    <string name="defaultLanguage">es</string>
+    <string name="errorConnectionTitle">Error de conexión</string>
+    <string name="errorConnectionText">No dispone de conexión a Internet</string>
+    <string name="errorConnectionButton">Aceptar</string>
+</resources>

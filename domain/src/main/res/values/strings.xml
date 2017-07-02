@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">domain</string>
+    <string name="url_services_activities">http://madrid-shops.com/json_new/getActivities.php</string>
+</resources>
