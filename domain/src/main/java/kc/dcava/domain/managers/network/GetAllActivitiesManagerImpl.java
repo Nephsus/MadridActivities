@@ -29,7 +29,7 @@ public class GetAllActivitiesManagerImpl implements GetAllActivitiesManager<GetA
     @Override
     public void getAllActivities(final GetAllActivitiesManagerCompletion completion, final GetAllActivitiesManagerFailure failure) {
 
-        String url = "http://madrid-shops.com/json_new/getActivities.php"
+        String url = "http://madrid-shops.com/json_new/getActivities.php";
 
         RequestQueue queue = Volley.newRequestQueue(weakContext.get());
 

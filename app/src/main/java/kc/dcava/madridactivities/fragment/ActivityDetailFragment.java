@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.NetworkPolicy;
 import com.squareup.picasso.Picasso;
 
 import java.util.LinkedList;
@@ -74,12 +75,14 @@ public class ActivityDetailFragment  extends Fragment{
         Picasso.with(getActivity())
                 .load(mMyActivity.getLogo())
                 .placeholder(R.drawable.bendito_ocio)
+                .networkPolicy(NetworkPolicy.OFFLINE)
                 .into(mLogo);
 
 
         Picasso.with(getActivity())
                 .load(Utilities.getMapImageUrl(mMyActivity))
                 .placeholder(R.drawable.bendito_ocio)
+                .networkPolicy(NetworkPolicy.OFFLINE)
                 .into(mMap);
 
         bindView();

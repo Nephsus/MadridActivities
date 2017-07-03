@@ -17,6 +17,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.ImageView;
@@ -98,7 +99,7 @@ public class MainActivity extends ParentMadridActivity {
 
 
 
-        GetTimeLastUpdateInteractor getTimeLastUpdateInteractor = new GetTimeLastUpdateImplInteractor(new GetTimeLastUpdateManagerImpl(this), 7);
+        GetTimeLastUpdateInteractor getTimeLastUpdateInteractor = new GetTimeLastUpdateImplInteractor(new GetTimeLastUpdateManagerImpl(this), getResources().getInteger(R.integer.period_for_update));
 
 
 
@@ -385,11 +386,6 @@ public class MainActivity extends ParentMadridActivity {
         });
 
     }
-
-
-
-
-
 
 }
 

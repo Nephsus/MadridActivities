@@ -26,6 +26,39 @@ public class DaoTest {
 
     private static Context appContext = InstrumentationRegistry.getTargetContext();
 
+    @Test
+    public void insert_several_activities(){
+        MyActivityDao<MyActivity> dao = new MyActivityDaoImpl( appContext );
+
+        dao.deleteAll();
+
+        //Insertamos
+        for (MyActivity myactitivity:fakeGeneratorAtivities()) {
+            dao.insert(myactitivity);
+        }
+
+        LinkedList<MyActivity> result = dao.query();
+
+        assertEquals(result.size(), 5);
+
+    }
+
+
+    @Test
+    public void insert_success(){
+        MyActivityDao<MyActivity> dao = new MyActivityDaoImpl( appContext );
+
+        //Insertamos
+        for (MyActivity myactitivity:fakeGeneratorAtivities()) {
+            dao.insert(myactitivity);
+        }
+
+        LinkedList<MyActivity> result = dao.query();
+
+        assertEquals(result.get(0).getName(), "MUSEO DEL PRADO");
+
+    }
+
 
     @Test
     public void really_delete_all_records_table_database() throws Exception {
@@ -39,28 +72,19 @@ public class DaoTest {
         //Y borramos para ver que todo funciona
         dao.deleteAll();
 
-
         LinkedList<MyActivity> result = dao.query();
-
 
         assertNull(result);
 
     }
 
 
-
-
-
     @Test
     public void operator_like_usind_field_of_database() throws Exception {
-
-
         MyActivityDao<MyActivity> dao = new MyActivityDaoImpl( appContext );
 
         //Inicializamos la bbdd
         dao.deleteAll();
-
-
 
         for (MyActivity myactitivity:fakeGeneratorAtivities()) {
             dao.insert(myactitivity);
